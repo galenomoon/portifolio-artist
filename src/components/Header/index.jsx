@@ -2,27 +2,24 @@ import React from "react";
 
 //assets
 import Image from "next/image";
-import galeno from "../../assets/galeno_img.png";
 import logo from "../../assets/logo_light.png";
+import galeno from "../../assets/galeno.svg";
+import guilhermeGalenoTextLogo from "../../assets/guilherme_galeno_text_logo.svg";
 
 //components
 import Circle from "../Circle";
 import NavBar from "../NavBar";
-import BackgroundText from "../BackgroundText";
 
 //styles
 import { motion } from "framer-motion";
-import { FaReact } from "react-icons/fa";
-import { IoLogoFigma } from "react-icons/io5";
-import { BsGit, BsLinkedin, BsGithub } from "react-icons/bs";
 import {
-  SiRedux,
-  SiNextdotjs,
-  SiJavascript,
-  SiTailwindcss,
-  SiTypescript,
-  SiJest,
+  SiSpotify,
+  SiDeezer,
+  SiApplemusic,
+  SiInstagram,
+  SiTiktok,
 } from "react-icons/si";
+import AnimateInView from "../AnimateInView";
 
 export default function FirstSection() {
   const container = {
@@ -39,101 +36,64 @@ export default function FirstSection() {
     visible: { y: 0, opacity: 1 },
   };
 
-  const stacks = [
+  const plataforms = [
     {
-      Icon: FaReact,
-      style: "md:hover:text-[#61DBFB]",
-      href: "https://reactjs.org/",
+      Icon: SiSpotify,
+      style: "md:hover:text-[#1DB954] md:hover:bg-white md:hover:rounded-full",
+      href: "https://open.spotify.com/artist/31aLhhJNZBcilYlPCXxdGv?si=TixVCqUCQLS71NN9j3vCKw",
     },
     {
-      Icon: SiRedux,
-      style: "md:hover:text-[#764ABC]",
-      href: "https://redux.js.org/",
+      Icon: SiDeezer,
+      style: "md:hover:text-[#00C7F2]",
+      href: "https://www.deezer.com/br/artist/104064692",
     },
     {
-      Icon: SiNextdotjs,
-      style: "md:hover:text-[#fff]",
-      href: "https://nextjs.org/",
-    },
-    {
-      Icon: SiJavascript,
-      style: "md:hover:text-[#F7DF1E]",
-      href: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
-    },
-    {
-      Icon: SiTypescript,
-      style: "md:hover:text-[#007ACC]",
-      href: "https://www.typescriptlang.org/",
-    },
-    {
-      Icon: SiJest,
-      style: "md:hover:text-[#FFC107]",
-      href: "https://jestjs.io/docs/next/getting-started",
-    },
-    {
-      Icon: BsGit,
-      style: "md:hover:text-[#F05032]",
-      href: "https://git-scm.com/",
-    },
-    {
-      Icon: SiTailwindcss,
-      style: "md:hover:text-[#38B2AC]",
-      href: "https://tailwindcss.com/",
+      Icon: SiApplemusic,
+      style: "md:hover:text-[#FF2D55] md:hover:bg-white md:hover:rounded-lg",
+      href: "https://music.apple.com/br/artist/guilherme-galeno/1525317537",
     },
   ];
 
   const socials = [
     {
-      Icon: BsGithub,
-      href: "https://www.github.com/galenomoon",
-      style: "md:hover:text-[#fff]",
+      Icon: SiInstagram,
+      style: "md:hover:text-[#E1306C]",
+      href: "https://www.instagram.com/guilhermegaleno_oficial/",
     },
     {
-      Icon: BsLinkedin,
-      href: "https://www.linkedin.com/in/guilherme-galeno-sena/",
-      style: "md:hover:text-[#0e76a8]",
-    },
-    {
-      Icon: IoLogoFigma,
-      href: "https://www.figma.com/@galenomoon",
-      style: "md:hover:text-[#F24E1E]",
+      Icon: SiTiktok,
+      style: "md:hover:text-[#010101]",
+      href: "https://www.tiktok.com/@guilhermegaleno_oficial",
     },
   ];
 
   return (
-    <main className="w-full h-screen max-h-screen relative items-center text-center justify-between overflow-hidden flex flex-col">
+    <main className="w-full h-screen max-h-screen relative items-center text-center sm:justify-center md:justify-between overflow-hidden flex flex-col">
       <NavBar />
       <div className="z-20 md:mt-0 self-center sm:translate-y-[40px] md:translate-y-0 flex flex-col select-none items-center justify-center text-center text-typography-600">
-        <motion.p
-          variants={item}
-          className="text-start text-xl md:hidden sm:flex sm:w-full -translate-y-[23px] items-start justify-end sm:h-fit"
-        >
-          <Image
-            alt="logo"
-            className="object-contain"
-            src={logo}
-            width={200}
-            height={50}
-          />
-        </motion.p>
-        <BackgroundText>Fullstack Developer</BackgroundText>
-        <div className="z-10 w-[90vw] flex text-typography-500 items-center justify-between sm:text-xl md:text-3xl">
+        <AnimateInView direction="Y" inverse className="h-fit w-[70%]">
+          <Image alt="logo" src={guilhermeGalenoTextLogo} layout="responsive" />
+        </AnimateInView>
+        <div className="z-10 w-[70%] flex text-typography-300 items-center justify-between sm:text-xl md:text-3xl">
           <motion.div
             initial="hidden"
             animate="visible"
-            className="flex sm:justify-around md:w-auto sm:w-full md:m-0 sm:my-1 items-center gap-2"
+            className="flex sm:justify-around md:w-auto sm:w-full md:m-0 sm:my-1 items-center gap-3"
             variants={container}
           >
-            {stacks.map(({ Icon, style, href }, index) => (
+            {plataforms.map(({ Icon, style, href }, index) => (
               <motion.a
                 key={index}
                 variants={item}
                 href={href}
                 target="_blank"
                 rel={"norrefer"}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
                 <Icon
                   key={index}
+                  size={30}
                   className={`${style} duration-200 hover:drop-shadow-xl`}
                 />
               </motion.a>
@@ -143,24 +103,21 @@ export default function FirstSection() {
             initial="hidden"
             animate="visible"
             variants={container}
-            className="flex items-baseline gap-2 sm:hidden md:flex"
+            className="flex items-baseline gap-3 sm:hidden md:flex"
           >
-            <motion.p
-              variants={item}
-              className="font-normal  md:text-2xl mx-2 leading-[1] self-end"
-            >
-              see more:
-            </motion.p>
             {socials.map(({ Icon, href, style }, index) => (
               <motion.a
                 key={index}
                 variants={item}
                 href={href}
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 target="_blank"
                 rel={"norrefer"}
               >
                 <Icon
                   key={index}
+                  size={30}
                   className={`${style} duration-200 hover:drop-shadow-xl`}
                 />
               </motion.a>
@@ -168,9 +125,9 @@ export default function FirstSection() {
           </motion.div>
         </div>
       </div>
-      <div className="w-full py-8 z-20">
+      <div className="w-[70%] pb-16 pt-10 z-20 flex justify-between">
         <motion.p
-          className="w-full sm:px-3 sm:translate-y-[40px] md:translate-y-0 sm:top-[265px] md:top-auto md:bottom-10 md:px-16 sm:text-lg md:text-start sm:text-center text-typography-300"
+          className="w-full sm:px-3 sm:translate-y-[40px] md:translate-y-0 sm:top-[265px] md:top-auto md:bottom-10 sm:text-lg md:text-start sm:text-center text-typography-300"
           initial="hidden"
           animate="visible"
           variants={{
@@ -178,22 +135,56 @@ export default function FirstSection() {
             visible: { opacity: 1, transition: { delay: 2 } },
           }}
         >
-          I&apos;m currently focused in improve my <br className="md:block" />
-          knowledges, challeging myself and{" "}
-          <br className="md:block sm:hidden" />
-          exploring the amazing world of technology.
+          Olá! Sou Guilherme Galeno, um apaixonado músico{" "}
+          <br className="sm:hidden md:block" />
+          de São Paulo conhecido pelas suas músicas que
+          <br className="sm:hidden md:block" />
+          somadas ultrapassam os 300K de streams.{" "}
+          <br className="sm:hidden md:block" />
+          Conheça e apoie esse artista independente!
         </motion.p>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { y: 120, opacity: 0 },
+            visible: { y: 0, opacity: 1, transition: { delay: 1.5 } },
+          }}
+          className="sm:hidden md:flex items-center justify-center gap-3"
+        >
+          {socials.map(({ Icon, href, style }, index) => (
+            <motion.a
+              key={index}
+              variants={item}
+              href={href}
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              target="_blank"
+              rel={"norrefer"}
+            >
+              <Icon
+                key={index}
+                size={30}
+                className={`${style} duration-200 hover:drop-shadow-xl`}
+              />
+            </motion.a>
+          ))}
+        </motion.div>
       </div>
       <motion.div
         initial="hidden"
         animate="visible"
-        className="sm:flex md:absolute bottom-0 h-[90vh] z-20"
+        className="sm:flex md:absolute bottom-0 sm:h-0 md:h-[80vh] z-20 md:w-[850px]"
         variants={{
           hidden: { y: 120, opacity: 0 },
           visible: { y: 0, opacity: 1, transition: { delay: 1.5 } },
         }}
       >
-        <Image alt="developer" src={galeno} className="object-contain " />
+        <Image
+          alt="developer"
+          src={galeno}
+          className="object-contain sm:invisible md:visible"
+        />
       </motion.div>
       <Circle />
     </main>

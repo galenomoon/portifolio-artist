@@ -54,12 +54,12 @@ export default function Home() {
           }
         />
       </Head>
-      <main className="flex min-h-screen flex-col justify-between bg-background-night-light clash-display font-normal text-typography-100">
+      <main className="flex min-h-screen flex-col justify-between bg-background-sun-rise clash-display font-normal text-typography-100">
         <FirstSection />
-        <SkillsAndExperience />
+        {/* <SkillsAndExperience />
         <RepositoryAndFigma />
         <Projects />
-        <ContactMe />
+        <ContactMe /> */}
       </main>
     </ScrollContext.Provider>
   );

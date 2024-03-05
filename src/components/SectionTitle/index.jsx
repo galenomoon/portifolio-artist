@@ -16,7 +16,7 @@ export default function SectionTitle({ title, emoji, className }) {
       className="flex gap-4 place-items-baseline mx-10 relative font-semibold mb-10"
     >
       <figure
-        className={`sm:w-[40px] md:w-[60px] sm:h-[40px] md:h-[60px] sm:text-xl md:text-3xl flex-shrink-0 -translate-y-4 rounded-2xl bg-gradient-to-br from-background-night-light to-typography-600 flex justify-center items-center`}
+        className={`sm:w-[40px] md:w-[60px] sm:h-[40px] md:h-[60px] sm:text-xl md:text-3xl flex-shrink-0 -translate-y-4 rounded-2xl bg-gradient-to-br from-background-sun-rise to-typography-600 flex justify-center items-center`}
       >
         {emoji}
       </figure>

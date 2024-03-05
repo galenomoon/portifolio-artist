@@ -73,7 +73,7 @@ export default function SkillsAndExperience() {
   return (
     <div
       ref={ref_skills_and_experience}
-      className="md:flex-row sm:flex-col text-typography-white-100 overflow-hidden pt-20 bg-background-night-dark w-full min-h-screen max-h-fit relative items-center text-center justify-between  flex"
+      className="md:flex-row sm:flex-col text-typography-white-100 overflow-hidden pt-20 bg-background-sun-set w-full min-h-screen max-h-fit relative items-center text-center justify-between  flex"
     >
       <BackgroundText
         white
@@ -111,7 +111,7 @@ export default function SkillsAndExperience() {
                 className="w-auto"
               >
                 <div className="flex sm:items-center md:items-start flex-col sm:w-full md:w-fit justify-center gap-2">
-                  <div className="text-background-night-dark flex items-center justify-center w-[50px] h-[50px] bg-background-moon rounded-full">
+                  <div className="text-background-sun-set flex items-center justify-center w-[50px] h-[50px] bg-background-moon rounded-full">
                     {Icon ? Icon() : null}
                   </div>
                   <span className="text-md">{label}</span>

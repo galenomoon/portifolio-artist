@@ -6,10 +6,6 @@ import { IoClose, IoLogoFigma } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
-//assets
-import Image from "next/image";
-import logo from "../../assets/logo_light.png";
-
 //context
 import { ScrollContext } from "@/pages";
 
@@ -30,15 +26,15 @@ export default function NavBar() {
 
   const navbar_options = [
     {
-      name: "Skills",
+      name: "Sobre mim",
       ref: ref_skills_and_experience,
     },
     {
-      name: "Portifolio",
+      name: "Últimos Lançamentos",
       ref: ref_projects,
     },
     {
-      name: "Contact",
+      name: "Manda uma palinha!",
       ref: ref_contact,
     },
   ];
@@ -48,21 +44,6 @@ export default function NavBar() {
     return scrollTo(ref, true);
   }
 
-  const socials = [
-    {
-      Icon: BsGithub,
-      href: "https://www.github.com/galenomoon",
-    },
-    {
-      Icon: BsLinkedin,
-      href: "https://www.linkedin.com/in/guilherme-galeno-sena/",
-    },
-    {
-      Icon: IoLogoFigma,
-      href: "https://www.figma.com/@galenomoon",
-    },
-  ];
-
   return (
     <>
       {/* Mobile */}
@@ -70,12 +51,12 @@ export default function NavBar() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="w-full fixed sm:flex z-[300] md:hidden justify-between p-4 h-[90px] items-center  text-typography-400"
+        className="w-full fixed top-0 sm:flex z-[300] md:hidden justify-between p-4 h-[90px] items-center  text-typography-400"
       >
         <motion.button
           whileTap={{ scale: 0.8 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="text-2xl p-3 text-typography-100 bg-white flex items-center justify-center rounded-full z-[101]"
+          className="text-2xl p-3 text-black bg-white flex items-center justify-center rounded-full z-[101]"
         >
           {isOpen ? <IoClose size={40} /> : <GiHamburgerMenu />}
         </motion.button>
@@ -97,46 +78,21 @@ export default function NavBar() {
           }}
         >
           {isOpen && (
-            <>
-              <motion.div
-                variants={container}
-                className="flex flex-col items-center justify-center gap-7"
-              >
-                {navbar_options.map(({ name, ref }, index) => (
-                  <motion.button
-                    onClick={() => mobileScrollTo(ref)}
-                    key={index}
-                    variants={item}
-                    className="text-start"
-                  >
-                    {name}
-                  </motion.button>
-                ))}
-              </motion.div>
-              <motion.div
-                variants={container}
-                className="flex w-full h-fit absolute bottom-0 text-white bg-typography-100 items-center justify-between py-8 px-4"
-              >
-                <motion.p variants={item} className="text-md">
-                  Let&apos;s talk!
-                </motion.p>
-                <motion.div
-                  variants={container}
-                  className="flex items-center gap-2"
+            <motion.div
+              variants={container}
+              className="flex flex-col items-center justify-center gap-7"
+            >
+              {navbar_options.map(({ name, ref }, index) => (
+                <motion.button
+                  onClick={() => mobileScrollTo(ref)}
+                  key={index}
+                  variants={item}
+                  className="text-start text-black"
                 >
-                  {socials.map(({ Icon, href }, index) => (
-                    <motion.a
-                      href={href}
-                      key={index}
-                      variants={item}
-                      target="_blank"
-                    >
-                      <Icon />
-                    </motion.a>
-                  ))}
-                </motion.div>
-              </motion.div>
-            </>
+                  {name}
+                </motion.button>
+              ))}
+            </motion.div>
           )}
         </motion.article>
       </motion.div>
@@ -145,36 +101,26 @@ export default function NavBar() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="w-full sm:hidden md:flex justify-between py-10 px-16 h-[120px] text-typography-300"
+        className="w-[70%] relative sm:hidden md:flex justify-between pt-10 px-16 z-[999] h-[62px] text-typography-100 items-center"
       >
-        <div className="flex w-full justify-between">
-          <motion.p variants={item} className="text-start">
-            <Image alt="logo" src={logo} width={200} height={50} />
-          </motion.p>
-          <motion.p variants={item} className="text-start">
-            São Paulo,
-            <br />
-            Brazil
-          </motion.p>
-          <motion.p variants={item} className="text-start">
-            Currently Fullstack Developer <br />
-            in{" "}
-            <a
-              href="https://www.linkedin.com/company/contele/"
-              target="_blank"
-              className="text-typography-100 underline"
-            >
-              Contele Soluções Tecnológicas
-            </a>
-          </motion.p>
-        </div>
-        <div className="flex w-[70%] justify-end gap-10">
+        <motion.a
+          href="https://share.amuse.io/track/guilherme-galeno-te-fiz-as-melhores-musicas-do-meu-mundo"
+          variants={item}
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          className="absolute right-0 rounded-full px-6 text-xl py-2 bg-[#343434]"
+        >
+          APOIE UM ARTISTA 💛🌎
+        </motion.a>
+        <div className="flex w-full justify-center gap-10">
           {navbar_options.map(({ name, ref }, index) => (
             <motion.button
               onClick={() => scrollTo(ref)}
               key={index}
               variants={item}
-              className="text-start"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="text-center text-xl"
             >
               {name}
             </motion.button>

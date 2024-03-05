@@ -14,32 +14,24 @@ module.exports = {
     extend: {
       colors: {
         typography: {
-          100: '#C1BBD1',
-          200: '#C1BBD1E6',
-          300: '#C1BBD1CC',
-          400: '#C1BBD199',
-          500: '#C1BBD166',
-          600: '#C1BBD133',
-          700: '#C1BBD11A',
-          800: '#C1BBD10D',
-          900: '#C1BBD105',
+          100: '#FFFFFF',
+          200: '#FFFFFFE6',
+          300: '#FFFFFFCC',
+          400: '#FFFFFF99',
+          500: '#FFFFFF66',
+          600: '#FFFFFF33',
+          700: '#FFFFFF1A',
+          800: '#FFFFFF0D',
+          900: '#FFFFFF05',
           white: {
-            100: '#D3D3D4',
-            200: '#D3D3D4E6',
-            300: '#D3D3D4CC',
-            400: '#D3D3D499',
-            500: '#D3D3D466',
-            600: '#D3D3D433',
-            700: '#D3D3D41A',
-            800: '#D3D3D40D',
-            900: '#D3D3D405',
+            100: '#ffffff'
           }
         },
         background: {
-          moon: "#F9EEE3",
-          night: {
-            light: "#2E2A3B",
-            dark: "#211F2C",
+          moon: "#fff",
+          sun: {
+            rise: "#FFC950",
+            set: "#FF745D",
           }
         }
       },
