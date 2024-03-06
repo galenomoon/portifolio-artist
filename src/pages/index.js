@@ -33,21 +33,24 @@ export default function Home() {
       }}
     >
       <Head>
-        <title> Galenomoon - Fullstack Developer </title>
+        <title>
+          {" "}
+          Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais{" "}
+        </title>
         <meta
           name="og:title"
           content={
-            "Galenomoon - Fullstack Developer: Showcasing Programming Skills and Expertise"
+            "Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais"
           }
         />
         <meta
           name="description"
-          content="Explore the diverse programming skills and expertise of Galenomoon, a fullstack developer specializing in web and application development. Discover a portfolio featuring innovative projects, cutting-edge technologies, and exceptional problem-solving abilities."
+          content="Olá! Sou Guilherme Galeno, um apaixonado músico de São Paulo conhecido pelas suas músicas que somadas ultrapassam os 300K de streams. Conheça e apoie esse artista independente!"
         />
         <meta
           name="og:description"
           content={
-            "Explore the diverse programming skills and expertise of Galenomoon, a fullstack developer specializing in web and application development. Discover a portfolio featuring innovative projects, cutting-edge technologies, and exceptional problem-solving abilities."
+            "Olá! Sou Guilherme Galeno, um apaixonado músico de São Paulo conhecido pelas suas músicas que somadas ultrapassam os 300K de streams. Conheça e apoie esse artista independente!"
           }
         />
       </Head>
@@ -65,9 +68,9 @@ export async function getStaticProps() {
   return {
     props: {
       title:
-        "Galenomoon - Fullstack Developer: Showcasing Programming Skills and Expertise",
+        "Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais",
       description:
-        "Explore the diverse programming skills and expertise of Galenomoon, a fullstack developer specializing in web and application development. Discover a portfolio featuring innovative projects, cutting-edge technologies, and exceptional problem-solving abilities.",
+        "Olá! Sou Guilherme Galeno, um apaixonado músico de São Paulo conhecido pelas suas músicas que somadas ultrapassam os 300K de streams. Conheça e apoie esse artista independente!",
     },
   };
 }
