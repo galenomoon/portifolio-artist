@@ -2,7 +2,6 @@ import React from "react";
 
 //assets
 import Image from "next/image";
-import logo from "../../assets/logo_light.png";
 import galeno from "../../assets/galeno.svg";
 import guilhermeGalenoTextLogo from "../../assets/guilherme_galeno_text_logo.svg";
 
@@ -20,6 +19,8 @@ import {
   SiTiktok,
 } from "react-icons/si";
 import AnimateInView from "../AnimateInView";
+
+import { tracks } from "@/mocks/spotify";
 
 export default function FirstSection() {
   const container = {
@@ -71,7 +72,7 @@ export default function FirstSection() {
     <main className="w-full h-screen max-h-screen relative items-center text-center sm:justify-center md:justify-between overflow-hidden flex flex-col">
       <NavBar />
       <div className="z-20 md:mt-0 self-center sm:translate-y-[40px] md:translate-y-0 flex flex-col select-none items-center justify-center text-center text-typography-600">
-        <AnimateInView direction="Y" inverse className="h-fit w-[70%]">
+        <AnimateInView direction="Y" inverse className="flex items-center justify-center w-[70%]">
           <Image alt="logo" src={guilhermeGalenoTextLogo} layout="responsive" />
         </AnimateInView>
         <div className="z-10 w-[70%] flex text-typography-300 items-center justify-between sm:text-xl md:text-3xl">
@@ -152,20 +153,21 @@ export default function FirstSection() {
           }}
           className="sm:hidden md:flex items-center justify-center gap-3"
         >
-          {socials.map(({ Icon, href, style }, index) => (
+          {tracks.slice(0, 3).map((track, index) => (
             <motion.a
               key={index}
               variants={item}
-              href={href}
+              href={track.url}
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
               target="_blank"
               rel={"norrefer"}
             >
-              <Icon
-                key={index}
-                size={30}
-                className={`${style} duration-200 hover:drop-shadow-xl`}
+              <Image 
+                src={track.cover}
+                width={250}
+                height={250}
+                className={"duration-200 hover:drop-shadow-xl"}
               />
             </motion.a>
           ))}
@@ -174,7 +176,7 @@ export default function FirstSection() {
       <motion.div
         initial="hidden"
         animate="visible"
-        className="sm:flex md:absolute bottom-0 sm:h-0 md:h-[80vh] z-20 md:w-[850px]"
+        className="sm:flex md:absolute -bottom-7 sm:h-0 md:h-[80vh] z-20 md:w-[620px]"
         variants={{
           hidden: { y: 120, opacity: 0 },
           visible: { y: 0, opacity: 1, transition: { delay: 1.5 } },

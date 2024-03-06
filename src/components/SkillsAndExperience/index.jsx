@@ -75,12 +75,22 @@ export default function SkillsAndExperience() {
       ref={ref_skills_and_experience}
       className="md:flex-row sm:flex-col text-typography-white-100 overflow-hidden pt-20 bg-background-sun-set w-full min-h-screen max-h-fit relative items-center text-center justify-between  flex"
     >
-      <BackgroundText
+      {/* <iframe
+        src="https://open.spotify.com/embed/artist/31aLhhJNZBcilYlPCXxdGv?utm_source=generator&theme=0"
+        width="100%"
+        height="600px"
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe> */}
+      
+      {/* <BackgroundText
         white
         lines={["Skills &", "Experience"]}
         className="absolute left-0 z-0 w-full"
-      />
-      <article className="flex flex-col w-full h-full z-10">
+      /> */}
+      {/* <article className="flex flex-col w-full h-full z-10">
         <SectionTitle title="Skills & Experience" emoji="👨🏽‍💻" />
         <section className="flex flex-col w-full h-full text-start text-lg sm:px-12 md:px-28 gap-5">
           <AnimateInView>
@@ -167,7 +177,7 @@ export default function SkillsAndExperience() {
             );
           })}
         </div>
-      </article>
+      </article> */}
     </div>
   );
 }

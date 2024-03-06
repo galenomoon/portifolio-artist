@@ -1,10 +1,7 @@
 import { createRef, createContext } from "react";
 
 //components
-import Projects from "@/components/Projects";
 import FirstSection from "@/components/Header";
-import ContactMe from "@/components/ContactMe";
-import RepositoryAndFigma from "@/components/RepositoryAndFigma";
 import SkillsAndExperience from "@/components/SkillsAndExperience";
 import Head from "next/head";
 
@@ -56,10 +53,9 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen flex-col justify-between bg-background-sun-rise clash-display font-normal text-typography-100">
         <FirstSection />
-        {/* <SkillsAndExperience />
-        <RepositoryAndFigma />
-        <Projects />
-        <ContactMe /> */}
+        {/* <SkillsAndExperience /> */}
+        {/* <RepositoryAndFigma /> */}
+        {/* <ContactMe /> */}
       </main>
     </ScrollContext.Provider>
   );
