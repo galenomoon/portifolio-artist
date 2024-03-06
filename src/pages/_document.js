@@ -7,7 +7,7 @@ export default function Document() {
         <meta
           name="og:title"
           content={
-            "Galenomoon - Fullstack Developer: Showcasing Programming Skills and Expertise"
+            "Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais"
           }
         />
         <meta name="og:image" content="/banner.png" />
@@ -17,15 +17,11 @@ export default function Document() {
         <meta name="og:site_name" content="Galenomoon" />
         <meta
           name="description"
-          content={
-            "Explore the diverse programming skills and expertise of Galenomoon, a fullstack developer specializing in web and application development. Discover a portfolio featuring innovative projects, cutting-edge technologies, and exceptional problem-solving abilities."
-          }
+          content={"Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais"}
         />
         <meta
           name="og:description"
-          content={
-            "Explore the diverse programming skills and expertise of Galenomoon, a fullstack developer specializing in web and application development. Discover a portfolio featuring innovative projects, cutting-edge technologies, and exceptional problem-solving abilities."
-          }
+          content={"Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais"}
         />
         <meta name="og:url" content="https://www.galenomoon.com" />
         <link rel="icon" href="/favicon.png" type="image/png" />
