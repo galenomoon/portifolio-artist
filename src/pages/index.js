@@ -34,8 +34,7 @@ export default function Home() {
     >
       <Head>
         <title>
-          {" "}
-          Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais{" "}
+          Guilherme Galeno 💛🌎 | No Spotify e em outras plataformas digitais
         </title>
         <meta
           name="og:title"
